@@ -33,9 +33,30 @@ svg {
   font-size: 1.5em;
 }
 
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p,
+  a {
+    font-size: 1rem;
+  }
+}
 /* Header styles */
 header {
   padding: 1.5rem;
+}
+header .menu-icon {
+  display: none;
 }
 header svg {
   cursor: pointer;
@@ -43,6 +64,7 @@ header svg {
 header span {
   font-size: 1.75rem;
   font-weight: bold;
+  text-align: center;
 }
 header nav ul {
   margin: 0;
@@ -61,16 +83,28 @@ header nav ul li > * {
   text-decoration: none;
 }
 
+@media screen and (max-width: 900px) {
+  header span {
+    font-size: 1.35rem;
+  }
+  header .menu-icon {
+    display: block;
+  }
+  header nav ul li:not(:last-child) {
+    display: none;
+  }
+}
 /* Intro Section styles */
 #intro {
   padding: 1.5rem;
-  grid-template-columns: 1fr 1fr;
 }
 #intro img {
+  flex-basis: 50%;
   max-width: 100%;
   height: auto;
 }
 #intro div {
+  flex-basis: 50%;
   padding: 1.5rem;
 }
 #intro div:last-of-type {
@@ -81,6 +115,11 @@ header nav ul li > * {
   background-size: contain;
 }
 
+@media screen and (max-width: 900px) {
+  #intro {
+    flex-direction: column-reverse;
+  }
+}
 #companies {
   max-width: 1100px;
   margin: auto;
@@ -89,18 +128,23 @@ header nav ul li > * {
   border-color: rgba(255, 175, 175, 0.75);
 }
 #companies > div {
-  margin: 2.5rem 0;
+  margin: 2rem;
   gap: 2.5rem;
+  flex-wrap: wrap;
+}
+#companies > div img {
+  max-width: 12.5%;
 }
 
 #collection {
   width: fit-content;
+  max-width: 100%;
   margin: 0 auto;
   padding: 3rem;
   gap: 3rem;
 }
 #collection > span {
-  color: crimson;
+  color: #f5c5cf;
   align-self: flex-end;
   cursor: pointer;
 }
@@ -109,15 +153,45 @@ header nav ul li > * {
   gap: 2.5rem;
 }
 #collection > div > div {
+  max-width: 30vw;
   padding: 1rem;
   border-radius: 0.25rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+#collection > div > div img {
+  max-width: 100%;
+  height: auto;
 }
 #collection > div > div h3 {
   margin: 0.5rem 0 0 0;
 }
 #collection > div > div .price {
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 900px) {
+  #collection > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #collection > div > div {
+    max-width: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  #collection > div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+footer {
+  padding: 1.5rem;
+  background-color: #000031;
+  color: white;
+}
+footer h3 {
+  margin: 0;
+}
+footer svg {
+  cursor: pointer;
 }
 
 /* Utility Classes */
