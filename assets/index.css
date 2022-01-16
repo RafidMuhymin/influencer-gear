@@ -2,6 +2,7 @@ body {
   padding: 0;
   max-width: 1440px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* Typography */
@@ -102,14 +103,14 @@ header nav ul li > * {
   flex-basis: 50%;
   max-width: 100%;
   height: auto;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 3s ease;
 }
 #intro div {
   flex-basis: 50%;
   padding: 1.5rem;
 }
 #intro div:last-of-type {
-  background-image: url("assets/circle-design.svg");
+  background-image: url("circle-design.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-position: center center;
@@ -119,9 +120,11 @@ header nav ul li > * {
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: scale(0.5);
   }
   to {
     opacity: 1;
+    transform: scale(1);
   }
 }
 @media screen and (max-width: 900px) {
@@ -153,7 +156,7 @@ header nav ul li > * {
   gap: 3rem;
 }
 #collection > span {
-  color: #f5c5cf;
+  color: crimson;
   align-self: flex-end;
   cursor: pointer;
 }
@@ -191,10 +194,30 @@ header nav ul li > * {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+#extra {
+  padding: 1.5rem;
+  text-align: center;
+}
+#extra h2 em {
+  font-size: inherit;
+}
+#extra h2 + svg {
+  font-size: 10rem;
+}
+#extra div {
+  padding: 1.5rem;
+  flex-wrap: wrap;
+}
+#extra div > div {
+  flex-basis: 25%;
+  font-size: 2.5rem;
+}
+
 footer {
   padding: 1.5rem;
   background-color: #000031;
   color: white;
+  text-align: center;
 }
 footer h3 {
   margin: 0;
